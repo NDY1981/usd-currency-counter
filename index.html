@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=no">
+    <meta name="author" content="Nathan Yoder">
+    <meta name="description" content="United States Dollar money counter web app">
+    <link href="styles/style.css" rel="stylesheet">
+    <script src="scripts/main.js" defer></script>
+    <title>USD Currency Counter</title>
+  </head>
+  <body>
+    <main>
+      <form id="USDCurrencyCounter"> <!-- The USD Currency Calculator is entirely in this form element. -->
+        <h1>USD Currency Counter</h1>
+        <fieldset>
+          <legend>Coins:</legend>
+          <ul>
+            <li class="Denomination">
+              <label class="DenominationQuantityLabel" for="OneCentQuantityInput">1¢ quantity:</label>
+              <input class="DenominationQuantityInput" id="OneCentQuantityInput" type="number" min="0" step="1" value="0" required/>
+              <label class="DenominationTotalValueLabel" for="OneCentTotalValueOutput">1¢ total value:</label>
+              <output class="DenominationTotalValueOutput" id="OneCentTotalValueOutput" for="OneCentQuantityInput"></output>
+            </li>
+            <li class="Denomination">
+              <label class="DenominationQuantityLabel" for="FiveCentsQuantityInput">5¢ quantity:</label>
+              <input class="DenominationQuantityInput" id="FiveCentsQuantityInput" type="number" min="0" step="1" value="0" required/>
+              <label class="DenominationTotalValueLabel" for="FiveCentsTotalValueOutput">5¢ total value:</label>
+              <output class="DenominationTotalValueOutput" id="FiveCentsTotalValueOutput" for="FiveCentsQuantityInput"></output>
+            </li>
+            <li class="Denomination">
+              <label class="DenominationQuantityLabel" for="TenCentsQuantityInput">10¢ quantity:</label>
+              <input class="DenominationQuantityInput" id="TenCentsQuantityInput" type="number" min="0" step="1" value="0" required/>
+              <label class="DenominationTotalValueLabel" for="TenCentsTotalValueOutput">10¢ total value:</label>
+              <output class="DenominationTotalValueOutput" id="TenCentsTotalValueOutput" for="TenCentsQuantityInput"></output>
+            </li>
+            <li class="Denomination">
+              <label class="DenominationQuantityLabel" for="TwentyFiveCentsQuantityInput">25¢ quantity:</label>
+              <input class="DenominationQuantityInput" id="TwentyFiveCentsQuantityInput" type="number" min="0" step="1" value="0" required/>
+              <label class="DenominationTotalValueLabel" for="TwentyFiveCentsTotalValueOutput">25¢ total value:</label>
+              <output class="DenominationTotalValueOutput" id="TwentyFiveCentsTotalValueOutput" for="TwentyFiveCentsQuantityInput"></output>
+            </li>
+            <li class="Denomination">
+              <label class="DenominationQuantityLabel" for="FiftyCentsQuantityInput">50¢ quantity:</label>
+              <input class="DenominationQuantityInput" id="FiftyCentsQuantityInput" type="number" min="0" step="1" value="0" required/>
+              <label class="DenominationTotalValueLabel" for="FiftyCentsTotalValueOutput">50¢ total value:</label>
+              <output class="DenominationTotalValueOutput" id="FiftyCentsTotalValueOutput" for="FiftyCentsQuantityInput"></output>
+            </li>
+            <li class="Denomination">
+              <label class="DenominationQuantityLabel" for="OneHundredCentsQuantityInput">100¢ quantity:</label>
+              <input class="DenominationQuantityInput" id="OneHundredCentsQuantityInput" type="number" min="0" step="1" value="0" required/>
+              <label class="DenominationTotalValueLabel" for="OneHundredCentsTotalValueOutput">100¢ total value:</label>
+              <output class="DenominationTotalValueOutput" id="OneHundredCentsTotalValueOutput" for="OneHundredCentsQuantityInput"></output>
+            </li>
+          </ul>
+          <div class="TotalQuantityAndValueGroup">
+            <label for="CoinsTotalQuantityOutput">Coins total quantity:</label>
+            <output id="CoinsTotalQuantityOutput" for="OneCentQuantityInput FiveCentsQuantityInput TenCentsQuantityInput TwentyFiveCentsQuantityInput FiftyCentsQuantityInput OneHundredCentsQuantityInput"></output>
+            <label for="CoinsTotalValueOutput">Coins total value:</label>
+            <output id="CoinsTotalValueOutput" for="OneCentQuantityInput FiveCentsQuantityInput TenCentsQuantityInput TwentyFiveCentsQuantityInput FiftyCentsQuantityInput OneHundredCentsQuantityInput"></output>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Banknotes:</legend>
+          <ul>
+            <li class="Denomination">
+              <label class="DenominationQuantityLabel" for="OneDollarQuantityInput">$1 quantity:</label>
+              <input class="DenominationQuantityInput" id="OneDollarQuantityInput" type="number" min="0" step="1" value="0" required/>
+              <label class="DenominationTotalValueLabel" for="OneDollarTotalValueOutput">$1 total value:</label>
+              <output class="DenominationTotalValueOutput" id="OneDollarTotalValueOutput" for="OneDollarQuantityInput"></output>
+            </li>
+            <li class="Denomination">
+              <label class="DenominationQuantityLabel" for="TwoDollarsQuantityInput">$2 quantity:</label>
+              <input class="DenominationQuantityInput" id="TwoDollarsQuantityInput" type="number" min="0" step="1" value="0" required/>
+              <label class="DenominationTotalValueLabel" for="TwoDollarsTotalValueOutput">$2 total value:</label>
+              <output class="DenominationTotalValueOutput" id="TwoDollarsTotalValueOutput" for="TwoDollarsQuantityInput"></output>
+            </li>
+            <li class="Denomination">
+              <label class="DenominationQuantityLabel" for="FiveDollarsQuantityInput">$5 quantity:</label>
+              <input class="DenominationQuantityInput" id="FiveDollarsQuantityInput" type="number" min="0" step="1" value="0" required/>
+              <label class="DenominationTotalValueLabel" for="FiveDollarsTotalValueOutput">$5 total value:</label>
+              <output class="DenominationTotalValueOutput" id="FiveDollarsTotalValueOutput" for="FiveDollarsQuantityInput"></output>
+            </li>
+            <li class="Denomination">
+              <label class="DenominationQuantityLabel" for="TenDollarsQuantityInput">$10 quantity:</label>
+              <input class="DenominationQuantityInput" id="TenDollarsQuantityInput" type="number" min="0" step="1" value="0" required/>
+              <label class="DenominationTotalValueLabel" for="TenDollarsTotalValueOutput">$10 total value:</label>
+              <output class="DenominationTotalValueOutput" id="TenDollarsTotalValueOutput" for="TenDollarsQuantityInput"></output>
+            </li>
+            <li class="Denomination">
+              <label class="DenominationQuantityLabel" for="TwentyDollarsQuantityInput">$20 quantity:</label>
+              <input class="DenominationQuantityInput" id="TwentyDollarsQuantityInput" type="number" min="0" step="1" value="0" required/>
+              <label class="DenominationTotalValueLabel" for="TwentyDollarsTotalValueOutput">$20 total value:</label>
+              <output class="DenominationTotalValueOutput" id="TwentyDollarsTotalValueOutput" for="TwentyDollarsQuantityInput"></output>
+            </li>
+            <li class="Denomination">
+              <label class="DenominationQuantityLabel" for="FiftyDollarsQuantityInput">$50 quantity:</label>
+              <input class="DenominationQuantityInput" id="FiftyDollarsQuantityInput" type="number" min="0" step="1" value="0" required/>
+              <label class="DenominationTotalValueLabel" for="FiftyDollarsTotalValueOutput">$50 total value:</label>
+              <output class="DenominationTotalValueOutput" id="FiftyDollarsTotalValueOutput" for="FiftyDollarsQuantityInput"></output>
+            </li>
+            <li class="Denomination">
+              <label class="DenominationQuantityLabel" for="OneHundredDollarsQuantityInput">$100 quantity:</label>
+              <input class="DenominationQuantityInput" id="OneHundredDollarsQuantityInput" type="number" min="0" step="1" value="0" required/>
+              <label class="DenominationTotalValueLabel" for="OneHundredDollarsTotalValueOutput">$100 total value:</label>
+              <output class="DenominationTotalValueOutput" id="OneHundredDollarsTotalValueOutput" for="OneHundredDollarsQuantityInput"></output>
+            </li>
+          </ul>
+          <div class="TotalQuantityAndValueGroup">
+            <label for="BanknotesTotalQuantityOutput">Banknotes total quantity:</label>
+            <output id="BanknotesTotalQuantityOutput" for="OneDollarQuantityInput TwoDollarsQuantityInput FiveDollarsQuantityInput TenDollarsQuantityInput TwentyDollarsQuantityInput FiftyDollarsQuantityInput OneHundredDollarsQuantityInput"></output>
+            <label for="BanknotesTotalValueOutput">Banknotes total value:</label>
+            <output id="BanknotesTotalValueOutput" for="OneDollarQuantityInput TwoDollarsQuantityInput FiveDollarsQuantityInput TenDollarsQuantityInput TwentyDollarsQuantityInput FiftyDollarsQuantityInput OneHundredDollarsQuantityInput"></output>
+          </div>
+        </fieldset>
+        <div class="TotalQuantityAndValueGroup">
+          <label for="CoinsAndBanknotesTotalQuantityOutput">Coins and banknotes total quantity:</label>
+          <output id="CoinsAndBanknotesTotalQuantityOutput" for="OneCentQuantityInput FiveCentsQuantityInput TenCentsQuantityInput TwentyFiveCentsQuantityInput FiftyCentsQuantityInput OneHundredCentsQuantityInput OneDollarQuantityInput TwoDollarsQuantityInput FiveDollarsQuantityInput TenDollarsQuantityInput TwentyDollarsQuantityInput FiftyDollarsQuantityInput OneHundredDollarsQuantityInput"></output>
+          <label for="CoinsAndBanknotesTotalValueOutput">Coins and banknotes total value:</label>
+          <output id="CoinsAndBanknotesTotalValueOutput" for="OneCentQuantityInput FiveCentsQuantityInput TenCentsQuantityInput TwentyFiveCentsQuantityInput FiftyCentsQuantityInput OneHundredCentsQuantityInput OneDollarQuantityInput TwoDollarsQuantityInput FiveDollarsQuantityInput TenDollarsQuantityInput TwentyDollarsQuantityInput FiftyDollarsQuantityInput OneHundredDollarsQuantityInput"></output>
+        </div>
+        <div id="ButtonGroup">
+          <input id="Calculate" type="button" value="Calculate"/>
+          <input id="Reset" type="reset"/>
+        </div>
+      </form>
+    </main>
+    <footer>
+      <p>Designed and developed by <a href="https://www.nathanyoderdev.com" target="new">Nathan Yoder</a></p>
+    </footer>
+  </body>
+</html>
