@@ -69,157 +69,173 @@ const Reset = document.querySelector("#Reset");
 
 /* Calucate total value of a denomination: */
 function DenominationTotalValue(value, quantity) {
-    quantity = Number(quantity);
-    let TotalValue = value * quantity;
-    TotalValue = TotalValue.toFixed(2);
-    TotalValue = Number(TotalValue);
-    return TotalValue;
+	quantity = Number(quantity);
+	let TotalValue = value * quantity;
+	TotalValue = TotalValue.toFixed(2);
+	TotalValue = Number(TotalValue);
+	return TotalValue;
 }
 
 /* Convert quantity to US format: */
 function USFormat(quantity) {
-    quantity = quantity.toLocaleString('en-US');
-    return quantity;
+	quantity = quantity.toLocaleString('en-US');
+	return quantity;
 }
 
 /* Convert value to USD format: */
 function USDFormat(value) {
-    value = value.toLocaleString('en-US', {
-        style: 'currency',
-        currency: 'USD',
-      });
-    return value;
+	value = value.toLocaleString('en-US', {
+		style: 'currency',
+		currency: 'USD',
+	});
+	return value;
 }
 
 /* Calculate and display all values and quantites: */
 function CalculateAll() {
-    /* Verify validity: */
-    if (USDCurrencyCounter.reportValidity()) {
+	/* Verify validity: */
+	if (USDCurrencyCounter.reportValidity()) {
 
-        /* If the inputs are valid: */
-        
-        /* Grab the total value for each denomination: */
+		/* If the inputs are valid: */
 
-        /* Grab the total value for each coin denomination: */
-        let OneCentTotalValue = DenominationTotalValue(0.01, OneCentQuantityInput.value);
-        let FiveCentsTotalValue = DenominationTotalValue(0.05, FiveCentsQuantityInput.value);
-        let TenCentsTotalValue = DenominationTotalValue(0.10, TenCentsQuantityInput.value);
-        let TwentyFiveCentsTotalValue = DenominationTotalValue(0.25, TwentyFiveCentsQuantityInput.value);
-        let FiftyCentsTotalValue = DenominationTotalValue(0.50, FiftyCentsQuantityInput.value);
-        let OneHundredCentsTotalValue = DenominationTotalValue(1.00, OneHundredCentsQuantityInput.value);
-    
-        /* Grab the total value for each banknote denomination: */
-        let OneDollarTotalValue = DenominationTotalValue(1.00, OneDollarQuantityInput.value);
-        let TwoDollarsTotalValue = DenominationTotalValue(2.00, TwoDollarsQuantityInput.value);
-        let FiveDollarsTotalValue = DenominationTotalValue(5.00, FiveDollarsQuantityInput.value);
-        let TenDollarsTotalValue = DenominationTotalValue(10.00, TenDollarsQuantityInput.value);
-        let TwentyDollarsTotalValue = DenominationTotalValue(20.00, TwentyDollarsQuantityInput.value);
-        let FiftyDollarsTotalValue = DenominationTotalValue(50.00, FiftyDollarsQuantityInput.value);
-        let OneHundredDollarsTotalValue = DenominationTotalValue(100.00, OneHundredDollarsQuantityInput.value);
+		/* Grab the total value for each denomination: */
 
-        /* Calculate total quantity of all coins: */
-        let CoinsTotalQuantity = Number(OneCentQuantityInput.value) + Number(FiveCentsQuantityInput.value) + Number(TenCentsQuantityInput.value) + Number(TwentyFiveCentsQuantityInput.value) + Number(FiftyCentsQuantityInput.value) + Number(OneHundredCentsQuantityInput.value);
-        CoinsTotalQuantity = CoinsTotalQuantity.toFixed(0);
-        CoinsTotalQuantity = Number(CoinsTotalQuantity);
+		/* Grab the total value for each coin denomination: */
+		let OneCentTotalValue = DenominationTotalValue(0.01, OneCentQuantityInput.value);
+		let FiveCentsTotalValue = DenominationTotalValue(0.05, FiveCentsQuantityInput.value);
+		let TenCentsTotalValue = DenominationTotalValue(0.10, TenCentsQuantityInput.value);
+		let TwentyFiveCentsTotalValue = DenominationTotalValue(0.25, TwentyFiveCentsQuantityInput.value);
+		let FiftyCentsTotalValue = DenominationTotalValue(0.50, FiftyCentsQuantityInput.value);
+		let OneHundredCentsTotalValue = DenominationTotalValue(1.00, OneHundredCentsQuantityInput.value);
 
-        /* Calculate total value of all coins: */
-        let CoinsTotalValue = OneCentTotalValue + FiveCentsTotalValue + TenCentsTotalValue + TwentyFiveCentsTotalValue + FiftyCentsTotalValue + OneHundredCentsTotalValue;
-        CoinsTotalValue = CoinsTotalValue.toFixed(2);
-        CoinsTotalValue = Number(CoinsTotalValue);
+		/* Grab the total value for each banknote denomination: */
+		let OneDollarTotalValue = DenominationTotalValue(1.00, OneDollarQuantityInput.value);
+		let TwoDollarsTotalValue = DenominationTotalValue(2.00, TwoDollarsQuantityInput.value);
+		let FiveDollarsTotalValue = DenominationTotalValue(5.00, FiveDollarsQuantityInput.value);
+		let TenDollarsTotalValue = DenominationTotalValue(10.00, TenDollarsQuantityInput.value);
+		let TwentyDollarsTotalValue = DenominationTotalValue(20.00, TwentyDollarsQuantityInput.value);
+		let FiftyDollarsTotalValue = DenominationTotalValue(50.00, FiftyDollarsQuantityInput.value);
+		let OneHundredDollarsTotalValue = DenominationTotalValue(100.00, OneHundredDollarsQuantityInput.value);
 
-        /* Calculate total quantity of all banknotes: */
-        let BanknotesTotalQuantity = Number(OneDollarQuantityInput.value) + Number(TwoDollarsQuantityInput.value) + Number(FiveDollarsQuantityInput.value) + Number(TenDollarsQuantityInput.value) + Number(TwentyDollarsQuantityInput.value) + Number(FiftyDollarsQuantityInput.value) + Number(OneHundredDollarsQuantityInput.value);
-        BanknotesTotalQuantity = BanknotesTotalQuantity.toFixed(0);
-        BanknotesTotalQuantity = Number(BanknotesTotalQuantity);
+		/* Calculate total quantity of all coins: */
+		let CoinsTotalQuantity = Number(OneCentQuantityInput.value) + Number(FiveCentsQuantityInput.value) + Number(TenCentsQuantityInput.value) + Number(TwentyFiveCentsQuantityInput.value) + Number(FiftyCentsQuantityInput.value) + Number(OneHundredCentsQuantityInput.value);
+		CoinsTotalQuantity = CoinsTotalQuantity.toFixed(0);
+		CoinsTotalQuantity = Number(CoinsTotalQuantity);
 
-        /* Calculate total value of all banknotes: */
-        let BanknotesTotalValue = OneDollarTotalValue + TwoDollarsTotalValue + FiveDollarsTotalValue + TenDollarsTotalValue + TwentyDollarsTotalValue + FiftyDollarsTotalValue + OneHundredDollarsTotalValue;
-        BanknotesTotalValue = BanknotesTotalValue.toFixed(2);
-        BanknotesTotalValue = Number(BanknotesTotalValue);
+		/* Calculate total value of all coins: */
+		let CoinsTotalValue = OneCentTotalValue + FiveCentsTotalValue + TenCentsTotalValue + TwentyFiveCentsTotalValue + FiftyCentsTotalValue + OneHundredCentsTotalValue;
+		CoinsTotalValue = CoinsTotalValue.toFixed(2);
+		CoinsTotalValue = Number(CoinsTotalValue);
 
-        /* Calculate total quantity of all coins and banknotes: */
-        let CoinsAndBanknotesTotalQuantity = CoinsTotalQuantity + BanknotesTotalQuantity;
-        CoinsAndBanknotesTotalQuantity = CoinsAndBanknotesTotalQuantity.toFixed(0);
-        CoinsAndBanknotesTotalQuantity = Number(CoinsAndBanknotesTotalQuantity);
-    
-        /* Calculate total value of all coins and banknotes: */
-        let CoinsAndBanknotesTotalValue = CoinsTotalValue + BanknotesTotalValue;
-        CoinsAndBanknotesTotalValue = CoinsAndBanknotesTotalValue.toFixed(2);
-        CoinsAndBanknotesTotalValue = Number(CoinsAndBanknotesTotalValue);
+		/* Calculate total quantity of all banknotes: */
+		let BanknotesTotalQuantity = Number(OneDollarQuantityInput.value) + Number(TwoDollarsQuantityInput.value) + Number(FiveDollarsQuantityInput.value) + Number(TenDollarsQuantityInput.value) + Number(TwentyDollarsQuantityInput.value) + Number(FiftyDollarsQuantityInput.value) + Number(OneHundredDollarsQuantityInput.value);
+		BanknotesTotalQuantity = BanknotesTotalQuantity.toFixed(0);
+		BanknotesTotalQuantity = Number(BanknotesTotalQuantity);
+
+		/* Calculate total value of all banknotes: */
+		let BanknotesTotalValue = OneDollarTotalValue + TwoDollarsTotalValue + FiveDollarsTotalValue + TenDollarsTotalValue + TwentyDollarsTotalValue + FiftyDollarsTotalValue + OneHundredDollarsTotalValue;
+		BanknotesTotalValue = BanknotesTotalValue.toFixed(2);
+		BanknotesTotalValue = Number(BanknotesTotalValue);
+
+		/* Calculate total quantity of all coins and banknotes: */
+		let CoinsAndBanknotesTotalQuantity = CoinsTotalQuantity + BanknotesTotalQuantity;
+		CoinsAndBanknotesTotalQuantity = CoinsAndBanknotesTotalQuantity.toFixed(0);
+		CoinsAndBanknotesTotalQuantity = Number(CoinsAndBanknotesTotalQuantity);
+
+		/* Calculate total value of all coins and banknotes: */
+		let CoinsAndBanknotesTotalValue = CoinsTotalValue + BanknotesTotalValue;
+		CoinsAndBanknotesTotalValue = CoinsAndBanknotesTotalValue.toFixed(2);
+		CoinsAndBanknotesTotalValue = Number(CoinsAndBanknotesTotalValue);
 
 
-        /* Print outputs: */
+		/* Print formatted values to quantity inputs: */
+		OneCentQuantityInput.value = Number(OneCentQuantityInput.value).toFixed(0);
+		FiveCentsQuantityInput.value = Number(FiveCentsQuantityInput.value).toFixed(0);
+		TenCentsQuantityInput.value = Number(TenCentsQuantityInput.value).toFixed(0);
+		TwentyFiveCentsQuantityInput.value = Number(TwentyFiveCentsQuantityInput.value).toFixed(0);
+		FiftyCentsQuantityInput.value = Number(FiftyCentsQuantityInput.value).toFixed(0);
+		OneHundredCentsQuantityInput.value = Number(OneHundredCentsQuantityInput.value).toFixed(0);
+		OneDollarQuantityInput.value = Number(OneDollarQuantityInput.value).toFixed(0);
+		TwoDollarsQuantityInput.value = Number(TwoDollarsQuantityInput.value).toFixed(0);
+		FiveDollarsQuantityInput.value = Number(FiveDollarsQuantityInput.value).toFixed(0);
+		TenDollarsQuantityInput.value = Number(TenDollarsQuantityInput.value).toFixed(0);
+		TwentyDollarsQuantityInput.value = Number(TwentyDollarsQuantityInput.value).toFixed(0);
+		FiftyDollarsQuantityInput.value = Number(FiftyDollarsQuantityInput.value).toFixed(0);
+		OneHundredDollarsQuantityInput.value = Number(OneHundredDollarsQuantityInput.value).toFixed(0);
 
-        /* Print coin total value outputs: */
-        OneCentTotalValueOutput.textContent = `${USDFormat(OneCentTotalValue)}`;
-        FiveCentsTotalValueOutput.textContent = `${USDFormat(FiveCentsTotalValue)}`;
-        TenCentsTotalValueOutput.textContent = `${USDFormat(TenCentsTotalValue)}`;
-        TwentyFiveCentsTotalValueOutput.textContent = `${USDFormat(TwentyFiveCentsTotalValue)}`;
-        FiftyCentsTotalValueOutput.textContent = `${USDFormat(FiftyCentsTotalValue)}`;
-        OneHundredCentsTotalValueOutput.textContent = `${USDFormat(OneHundredCentsTotalValue)}`;
-        
-        /* Print total coins quantity output: */
-        CoinsTotalQuantityOutput.textContent = `${USFormat(CoinsTotalQuantity)}`;
 
-        /* Print total coins value output: */
-        CoinsTotalValueOutput.textContent = `${USDFormat(CoinsTotalValue)}`;
+		/* Print outputs: */
 
-        /* Print banknote total value outputs: */
-        OneDollarTotalValueOutput.textContent = `${USDFormat(OneDollarTotalValue)}`;
-        TwoDollarsTotalValueOutput.textContent = `${USDFormat(TwoDollarsTotalValue)}`;
-        FiveDollarsTotalValueOutput.textContent = `${USDFormat(FiveDollarsTotalValue)}`;
-        TenDollarsTotalValueOutput.textContent = `${USDFormat(TenDollarsTotalValue)}`;
-        TwentyDollarsTotalValueOutput.textContent = `${USDFormat(TwentyDollarsTotalValue)}`;
-        FiftyDollarsTotalValueOutput.textContent = `${USDFormat(FiftyDollarsTotalValue)}`;
-        OneHundredDollarsTotalValueOutput.textContent = `${USDFormat(OneHundredDollarsTotalValue)}`;
+		/* Print coin total value outputs: */
+		OneCentTotalValueOutput.textContent = `${USDFormat(OneCentTotalValue)}`;
+		FiveCentsTotalValueOutput.textContent = `${USDFormat(FiveCentsTotalValue)}`;
+		TenCentsTotalValueOutput.textContent = `${USDFormat(TenCentsTotalValue)}`;
+		TwentyFiveCentsTotalValueOutput.textContent = `${USDFormat(TwentyFiveCentsTotalValue)}`;
+		FiftyCentsTotalValueOutput.textContent = `${USDFormat(FiftyCentsTotalValue)}`;
+		OneHundredCentsTotalValueOutput.textContent = `${USDFormat(OneHundredCentsTotalValue)}`;
 
-        /* Print total banknotes quantity output: */
-        BanknotesTotalQuantityOutput.textContent = `${USFormat(BanknotesTotalQuantity)}`;
+		/* Print total coins quantity output: */
+		CoinsTotalQuantityOutput.textContent = `${USFormat(CoinsTotalQuantity)}`;
 
-        /* Print total banknotes value output: */
-        BanknotesTotalValueOutput.textContent = `${USDFormat(BanknotesTotalValue)}`;
-        
-        /* Print total coins and banknotes quantity output: */
-        CoinsAndBanknotesTotalQuantityOutput.textContent = `${USFormat(CoinsAndBanknotesTotalQuantity)}`;
+		/* Print total coins value output: */
+		CoinsTotalValueOutput.textContent = `${USDFormat(CoinsTotalValue)}`;
 
-        /* Print total coins and banknotes value output: */
-        CoinsAndBanknotesTotalValueOutput.textContent = `${USDFormat(CoinsAndBanknotesTotalValue)}`;
+		/* Print banknote total value outputs: */
+		OneDollarTotalValueOutput.textContent = `${USDFormat(OneDollarTotalValue)}`;
+		TwoDollarsTotalValueOutput.textContent = `${USDFormat(TwoDollarsTotalValue)}`;
+		FiveDollarsTotalValueOutput.textContent = `${USDFormat(FiveDollarsTotalValue)}`;
+		TenDollarsTotalValueOutput.textContent = `${USDFormat(TenDollarsTotalValue)}`;
+		TwentyDollarsTotalValueOutput.textContent = `${USDFormat(TwentyDollarsTotalValue)}`;
+		FiftyDollarsTotalValueOutput.textContent = `${USDFormat(FiftyDollarsTotalValue)}`;
+		OneHundredDollarsTotalValueOutput.textContent = `${USDFormat(OneHundredDollarsTotalValue)}`;
 
-    } else {
-        /* Reset all outputs if input(s) are invalid: */
-        ResetAll();
-    }        
+		/* Print total banknotes quantity output: */
+		BanknotesTotalQuantityOutput.textContent = `${USFormat(BanknotesTotalQuantity)}`;
+
+		/* Print total banknotes value output: */
+		BanknotesTotalValueOutput.textContent = `${USDFormat(BanknotesTotalValue)}`;
+
+		/* Print total coins and banknotes quantity output: */
+		CoinsAndBanknotesTotalQuantityOutput.textContent = `${USFormat(CoinsAndBanknotesTotalQuantity)}`;
+
+		/* Print total coins and banknotes value output: */
+		CoinsAndBanknotesTotalValueOutput.textContent = `${USDFormat(CoinsAndBanknotesTotalValue)}`;
+
+	} else {
+		/* Reset all outputs if input(s) are invalid: */
+		ResetAll();
+	}
 }
 
 /* Reset all outputs, and if used on the Reset button, reset all inputs too: */
 function ResetAll() {
-    /* Reset all outputs back to default in addition to default behavior when attached to the Reset button: */
-    OneCentTotalValueOutput.textContent = "";
-    FiveCentsTotalValueOutput.textContent = "";
-    TenCentsTotalValueOutput.textContent = "";
-    TwentyFiveCentsTotalValueOutput.textContent = "";
-    FiftyCentsTotalValueOutput.textContent = "";
-    OneHundredCentsTotalValueOutput.textContent = "";
+	/* Reset all outputs back to default in addition to default behavior when attached to the Reset button: */
+	OneCentTotalValueOutput.textContent = "";
+	FiveCentsTotalValueOutput.textContent = "";
+	TenCentsTotalValueOutput.textContent = "";
+	TwentyFiveCentsTotalValueOutput.textContent = "";
+	FiftyCentsTotalValueOutput.textContent = "";
+	OneHundredCentsTotalValueOutput.textContent = "";
 
-    CoinsTotalQuantityOutput.textContent = "";
+	CoinsTotalQuantityOutput.textContent = "";
 
-    CoinsTotalValueOutput.textContent = "";
+	CoinsTotalValueOutput.textContent = "";
 
-    OneDollarTotalValueOutput.textContent = "";
-    TwoDollarsTotalValueOutput.textContent = "";
-    FiveDollarsTotalValueOutput.textContent = "";
-    TenDollarsTotalValueOutput.textContent = "";
-    TwentyDollarsTotalValueOutput.textContent = "";
-    FiftyDollarsTotalValueOutput.textContent = "";
-    OneHundredDollarsTotalValueOutput.textContent = "";
+	OneDollarTotalValueOutput.textContent = "";
+	TwoDollarsTotalValueOutput.textContent = "";
+	FiveDollarsTotalValueOutput.textContent = "";
+	TenDollarsTotalValueOutput.textContent = "";
+	TwentyDollarsTotalValueOutput.textContent = "";
+	FiftyDollarsTotalValueOutput.textContent = "";
+	OneHundredDollarsTotalValueOutput.textContent = "";
 
-    BanknotesTotalQuantityOutput.textContent = "";
+	BanknotesTotalQuantityOutput.textContent = "";
 
-    BanknotesTotalValueOutput.textContent = "";
+	BanknotesTotalValueOutput.textContent = "";
 
-    CoinsAndBanknotesTotalQuantityOutput.textContent = "";
+	CoinsAndBanknotesTotalQuantityOutput.textContent = "";
 
-    CoinsAndBanknotesTotalValueOutput.textContent = "";
+	CoinsAndBanknotesTotalValueOutput.textContent = "";
 }
 
 
